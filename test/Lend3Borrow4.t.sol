@@ -2,13 +2,17 @@
 pragma solidity ^0.8.13;
 
 import {Test, console} from "forge-std/Test.sol";
-import {Lend3Borrow4} from "../src/Lend3Borrow4.sol";
+import {lendBorrow} from "../src/lendBorrow.sol";
+import {Vm} from "forge-std/Vm.sol";
 
-contract Lend3Borrow4Test is Test {
-    Lend3Borrow4 public lend3Borrow4;
+contract lendBorrowTest is Test {
+    lendBorrow public LendBorrow;
 
     function setUp() public {
-        Lend3Borrow4 = new Lend3Borrow4();
-    
+        LendBorrow = new lendBorrow();
+        address owner1 = vm.makeAddr("owner");
+        address lender1 = vm.makeAddr("lender");
+        address borrower1 = vm.makeAddr("borrower");
+        address owner2 = vm.makeAddr("usdt");
     }
 }
